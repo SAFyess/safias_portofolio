@@ -1,0 +1,1389 @@
+:root {
+    --left-bg: #4A3AFF; /* Indigo Électrique */
+    --right-bg: #FADADD; /* Rose Perle / Blush */
+    --accent-color: #FADADD;
+    --text-white: #FFFFFF;
+    --text-dark: #4A3AFF;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body { 
+    font-family: 'Inter', sans-serif; 
+    overflow-x: hidden; /* Empêche le défilement horizontal */
+    overflow-y: auto;   /* <--- CHANGE ÇA : Permet de défiler vers le bas */
+}
+
+/* NAVBAR */
+.navbar {
+    position: fixed;
+    top: 0; width: 100%;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 25px 60px;
+    background: var(--right-bg); /* S'aligne sur la partie droite */
+    z-index: 100;
+}
+
+.logo { font-family: 'Montserrat'; font-weight: 900; font-size: 1.8rem; color: var(--text-dark); }
+.nav-links { display: flex; list-style: none; gap: 40px; }
+.nav-links a { text-decoration: none; color: var(--text-dark); font-weight: 700; font-size: 0.8rem; letter-spacing: 1px; }
+
+/* SPLIT SCREEN */
+.split-screen { display: flex; height: 100vh; width: 100vw; }
+
+.left-side {
+    flex: 1.2; 
+    background-color: var(--left-bg);
+    display: flex; 
+    align-items: center; 
+    justify-content: flex-start; /* Aligne le contenu au début */
+    padding-left: 80px; /* <--- AUGMENTE CETTE VALEUR pour décoller du bord gauche */
+    padding-right: 40px;
+    color: var(--text-white);
+}
+
+/* Optionnel : pour que le texte soit encore plus harmonieux */
+.content-wrapper { 
+    max-width: 550px; 
+    margin-left: 20px; /* <--- Petit coup de pouce supplémentaire si besoin */
+}
+
+.right-side {
+    flex: 1; background-color: var(--right-bg);
+    position: relative; display: flex; align-items: center; justify-content: center;
+}
+
+/* TEXT CONTENT */
+.content-wrapper { max-width: 600px; }
+.subtitle { font-weight: 600; letter-spacing: 2px; margin-bottom: 20px; color: var(--accent-color); }
+h1 { font-family: 'Montserrat'; font-size: 5rem; line-height: 0.85; margin-bottom: 30px; }
+.bold-name { font-weight: 900; }
+.description { font-size: 1.1rem; opacity: 0.9; margin-bottom: 40px; max-width: 450px; }
+
+.skill-summary { display: flex; gap: 50px; margin-bottom: 40px; font-size: 0.9rem; }
+.skill-summary h3 { font-size: 1rem; margin-bottom: 10px; color: var(--accent-color); }
+
+.cta-area { display: flex; align-items: center; gap: 20px; }
+.btn-main { 
+    background: var(--accent-color); color: var(--text-dark); 
+    padding: 15px 35px; text-decoration: none; font-weight: 900; font-size: 0.8rem;
+}
+.arrow-icon { font-size: 1.5rem; color: var(--text-white); }
+
+/* DECORATIONS DROITE */
+.decor-container { position: relative; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; }
+
+.shape { position: absolute; border: 2px solid var(--text-dark); }
+.diamond-main { width: 300px; height: 300px; transform: rotate(45deg); background: var(--left-bg); top: 15%; }
+.square-decor { width: 100px; height: 100px; border: 1px solid var(--text-dark); left: 10%; top: 20%; }
+
+.code-box {
+    position: absolute; background: var(--left-bg);
+    width: 380px; padding: 20px; border-radius: 5px;
+    box-shadow: 20px 20px 0px rgba(0,0,0,0.1);
+    bottom: 20%; right: 10%; z-index: 10;
+}
+.code-header { display: flex; gap: 5px; margin-bottom: 10px; }
+.code-header span { width: 8px; height: 8px; border-radius: 50%; background: var(--right-bg); opacity: 0.5; }
+
+.code-content { font-family: monospace; font-size: 0.85rem; color: white; }
+.purple { color: #d4bfff; } .blue { color: #809fff; } .yellow { color: #fffeb3; } .green { color: #b3ffb3; }
+
+.dots-grid {
+    position: absolute; width: 100px; height: 150px;
+    background-image: radial-gradient(var(--text-dark) 2px, transparent 2px);
+    background-size: 15px 15px;
+    top: 10%; right: 15%; opacity: 0.3;
+}
+
+/* SECTION STATS - ÉPURÉE */
+.stats-section {
+    background-color: var(--left-bg); 
+    padding: 120px 50px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    /* On garde une séparation très légère en haut */
+    border-top: 1px solid rgba(255, 255, 255, 0.05); 
+}
+
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    width: 100%;
+    z-index: 2;
+}
+
+.stat-card {
+    /* ON ENLÈVE LE FOND ET LA BORDURE ICI */
+    background: transparent;
+    border: none; 
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px); /* Un petit mouvement léger au survol */
+}
+
+.stat-number {
+    display: inline-block;
+    font-family: 'Montserrat';
+    font-size: 5rem; 
+    font-weight: 900;
+    
+    /* C'EST CETTE LIGNE QUI FAIT TOUT : */
+    color: var(--accent-color); 
+    
+    margin-bottom: 10px;
+    line-height: 1;
+}
+
+/* N'oublie pas le "+" aussi ! */
+.plus {
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--accent-color); 
+    vertical-align: top;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--text-white);
+    text-transform: uppercase;
+    opacity: 0.8;
+}
+
+/* On garde les petits points de déco dans le fond */
+.decor-dots-stats {
+    position: absolute;
+    bottom: 40px;
+    left: 60px;
+    width: 80px;
+    height: 50px;
+    background-image: radial-gradient(var(--accent-color) 1px, transparent 1px);
+    background-size: 12px 12px;
+    opacity: 0.15;
+}
+
+/* Motifs de rappel DA */
+.decor-dots-stats {
+    position: absolute;
+    bottom: 20px;
+    left: 40px;
+    width: 100px;
+    height: 60px;
+    background-image: radial-gradient(var(--accent-color) 1px, transparent 1px);
+    background-size: 10px 10px;
+    opacity: 0.2;
+}
+
+/* SECTION PRÉSENTATION - WHITE EDITION */
+.presentation-section {
+    background-color: #FFFFFF; /* Fond blanc pur */
+    color: #1a1a1a;
+    padding: 140px 60px;
+    position: relative;
+    overflow: hidden;
+}
+
+.presentation-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+}
+
+/* --- DÉCORS GÉOMÉTRIQUES --- */
+.geo-decor { position: absolute; z-index: 1; }
+
+.grid-pattern {
+    top: 50px; right: 50px; width: 200px; height: 200px;
+    background-image: radial-gradient(var(--left-bg) 1.5px, transparent 1.5px);
+    background-size: 20px 20px;
+    opacity: 0.4;
+}
+
+.circle-1 {
+    top: -100px; left: -100px; width: 400px; height: 400px;
+    background: radial-gradient(circle, var(--right-bg) 0%, rgba(255,255,255,0) 70%);
+    opacity: 0.8;
+}
+
+.floating-square {
+    bottom: 10%; right: 10%; width: 150px; height: 150px;
+    border: 4px solid var(--left-bg);
+    transform: rotate(15deg);
+    opacity: 0.2;
+}
+
+.line-divider {
+    top: 30%; left: 0; width: 200px; height: 4px;
+    background: var(--left-bg);
+}
+
+/* --- HEADER --- */
+.pres-header { 
+    margin-bottom: 40px; /* <--- On passe de 70px à 40px pour réduire l'espace */
+}
+.step-num { font-family: 'Space Mono', monospace; color: var(--left-bg); font-weight: 700; font-size: 0.9rem; }
+.main-title { 
+    font-family: 'Montserrat'; 
+    font-weight: 900; 
+    font-size: 5rem; 
+    letter-spacing: -2px; 
+    color: var(--left-bg);
+    margin-bottom: 0; /* Assure-toi qu'il n'y a pas de marge supplémentaire ici */
+}
+/* --- GRID --- */
+.pres-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 80px; align-items: center; }
+
+.text-indigo { color: var(--left-bg); font-weight: 800; }
+.intro-hi { font-size: 1.5rem; margin-bottom: 25px; font-weight: 700; }
+.bio-text p { font-size: 1.1rem; line-height: 1.8; color: #444; margin-bottom: 20px; }
+
+/* BOUTON CV */
+.cv-action { display: flex; align-items: center; gap: 20px; margin-top: 30px; }
+.btn-primary { 
+    background: var(--left-bg); color: white; padding: 18px 35px; 
+    text-decoration: none; font-weight: 800; font-size: 0.8rem; letter-spacing: 1px;
+}
+.file-info { font-size: 0.75rem; color: #999; font-family: 'Space Mono', monospace; }
+
+/* --- VISION CARD (STRATÉGIQUE) --- */
+.vision-card {
+    background: #fdfdfd;
+    border: 3px solid var(--left-bg);
+    box-shadow: 15px 15px 0px var(--right-bg); /* Effet de profondeur sans arrondi */
+    padding: 40px;
+}
+
+.card-header { display: flex; justify-content: space-between; border-bottom: 1px solid #eee; padding-bottom: 15px; margin-bottom: 20px; }
+.folder-name { font-family: 'Space Mono', monospace; font-size: 0.7rem; font-weight: 700; }
+
+.badge-status { font-size: 0.65rem; font-weight: 800; display: flex; align-items: center; gap: 6px; color: #2ecc71; }
+.ping { width: 7px; height: 7px; background: #2ecc71; border-radius: 50%; animation: ping-ani 1.5s infinite; }
+
+@keyframes ping-ani { 0% { transform: scale(1); opacity: 1; } 100% { transform: scale(2.5); opacity: 0; } }
+
+.vision-card h3 { font-family: 'Montserrat'; font-size: 1.8rem; margin-bottom: 15px; line-height: 1.2; }
+.mission { font-style: italic; color: #666; font-size: 0.95rem; margin-bottom: 20px; border-left: 3px solid var(--right-bg); padding-left: 15px; }
+
+.key-points { list-style: none; }
+.key-points li { font-size: 0.9rem; margin-bottom: 10px; color: #333; }
+.key-points li strong { color: var(--left-bg); }
+
+.card-footer { margin-top: 30px; display: flex; gap: 10px; }
+.btn-tag { font-size: 0.6rem; font-weight: 900; background: #eee; padding: 5px 10px; border: 1px solid #ddd; }
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+    .pres-grid { grid-template-columns: 1fr; }
+    .main-title { font-size: 3.5rem; }
+    .vision-card { margin-top: 40px; }
+}
+
+/* --- SECTION FORMATION --- */
+.formation-section {
+    background-color: #FFFFFF;
+    padding: 100px 60px; /* Plus d'espace entre les sections */
+    position: relative;
+    overflow: hidden;
+}
+
+/* --- MOTIFS GÉOMÉTRIQUES (RENFORCÉS) --- */
+.geo-decor { position: absolute; opacity: 0.6; pointer-events: none; z-index: 1; }
+
+.corner-grid {
+    top: 0; right: 0; width: 250px; height: 250px;
+    background-image: radial-gradient(var(--left-bg) 2px, transparent 2px);
+    background-size: 20px 20px;
+}
+
+.side-lines {
+    top: 20%; left: 0; width: 40px; height: 300px;
+    border-left: 4px solid var(--right-bg);
+    border-right: 1px solid var(--left-bg);
+}
+
+.floating-plus {
+    bottom: 10%; left: 10%; width: 40px; height: 40px;
+    background: 
+        linear-gradient(90deg, transparent 45%, var(--left-bg) 45%, var(--left-bg) 55%, transparent 55%),
+        linear-gradient(0deg, transparent 45%, var(--left-bg) 45%, var(--left-bg) 55%, transparent 55%);
+}
+
+.big-outline-circle {
+    top: 40%; right: -100px; width: 400px; height: 400px;
+    border: 1px solid rgba(74, 58, 255, 0.05);
+    border-radius: 50%;
+}
+
+/* --- LAYOUT : GAUCHE / DROITE --- */
+.formation-container { max-width: 1200px; margin: 0 auto; position: relative; z-index: 10; }
+
+.form-grid { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr; /* Force les deux colonnes */
+    gap: 80px; /* Espace large entre texte et cartes */
+    align-items: start; 
+}
+
+/* --- TEXTE GAUCHE --- */
+.form-header { margin-bottom: 40px; }
+.bts-info p { font-size: 1.1rem; line-height: 1.8; color: #444; }
+
+.focus-box-outline {
+    margin-top: 40px;
+    padding: 25px;
+    border: 2px solid var(--right-bg);
+    border-left: 8px solid var(--right-bg);
+    color: var(--left-bg);
+}
+
+/* --- CARTES DROITE --- */
+.options-container { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 50px; /* Espace entre les deux cadres pour qu'ils ne soient pas collés */
+}
+
+.option-card { position: relative; transition: transform 0.3s ease; }
+
+.active-slam {
+    background: var(--left-bg);
+    color: white;
+    padding: 40px;
+    box-shadow: 20px 20px 0px var(--right-bg);
+}
+
+.choice-badge-top {
+    position: absolute; top: 15px; right: 15px;
+    background: var(--right-bg); color: var(--left-bg);
+    padding: 4px 8px; font-family: 'Space Mono', monospace;
+    font-size: 0.6rem; font-weight: 900;
+}
+
+.sisr-clean {
+    background: #FFFFFF;
+    border: 2px solid var(--left-bg);
+    padding: 40px;
+    box-shadow: 15px 15px 0px #F0F0F0;
+}
+
+/* Typo Cartes */
+h4 { font-family: 'Montserrat'; font-weight: 900; font-size: 3rem; margin-bottom: 10px; }
+.option-desc { color: var(--right-bg); font-weight: 700; margin-bottom: 20px; }
+.option-desc-alt { color: #666; font-weight: 700; margin-bottom: 20px; }
+
+.skill-list, .skill-list-alt { list-style: none; padding: 0; }
+.skill-list li span { color: var(--right-bg); font-weight: 900; margin-right: 10px; }
+
+/* --- SECTION COMPÉTENCES --- */
+.skills-section {
+    background-color: #FFFFFF;
+    padding: 100px 60px;
+    position: relative;
+    overflow: hidden;
+    border-top: none !important; /* Force la suppression du trait gris */
+}
+
+.skills-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+}
+
+/* --- MOTIFS GÉOMÉTRIQUES --- */
+.geo-decor { position: absolute; pointer-events: none; z-index: 1; }
+
+.skills-dots-left {
+    top: 5%; left: -20px; width: 150px; height: 400px;
+    background-image: radial-gradient(var(--left-bg) 2.5px, transparent 2.5px);
+    background-size: 20px 20px; opacity: 0.4;
+}
+
+.skills-dots-right {
+    bottom: 0; right: -20px; width: 180px; height: 500px;
+    background-image: radial-gradient(var(--right-bg) 3px, transparent 3px);
+    background-size: 25px 25px; opacity: 0.5;
+}
+
+.skills-outline-rect {
+    top: 15%; left: 15%; width: 250px; height: 120px;
+    border: 1px solid rgba(74, 58, 255, 0.15);
+    transform: rotate(-12deg);
+}
+
+.skills-small-grid {
+    bottom: 10%; left: 25%; width: 100px; height: 100px;
+    background-image: linear-gradient(rgba(250, 218, 221, 0.4) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(250, 218, 221, 0.4) 1px, transparent 1px);
+    background-size: 12px 12px;
+}
+
+.skills-floating-plus {
+    top: 25%; right: 10%; width: 50px; height: 50px;
+    background: 
+        linear-gradient(90deg, transparent 45%, var(--right-bg) 45%, var(--right-bg) 55%, transparent 55%),
+        linear-gradient(0deg, transparent 45%, var(--right-bg) 45%, var(--right-bg) 55%, transparent 55%);
+    opacity: 0.4;
+}
+
+/* --- TITRES --- */
+.skills-header { margin-bottom: 60px; }
+.skills-intro { max-width: 800px; font-size: 1.1rem; line-height: 1.8; color: #444; margin-top: 20px; }
+
+.skills-vertical-stack { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 60px; /* Espace réduit entre les deux sous-parties */
+    margin-top: 60px; 
+}
+
+
+.category-header-inline {
+    display: flex; justify-content: center; align-items: center;
+    gap: 15px; margin-bottom: 50px; position: relative; padding-bottom: 15px;
+}
+
+.category-header-inline::after {
+    content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+    width: 80px; height: 4px; background: var(--right-bg);
+}
+
+.category-icon { font-size: 1.6rem; color: var(--right-bg); font-weight: 900; }
+.category-header-inline h3 { font-family: 'Montserrat'; font-weight: 900; font-size: 1.5rem; letter-spacing: 2px; color: var(--left-bg); }
+
+/* --- GRILLE DE LOGOS --- */
+.skills-flex-container {
+    display: flex;
+    flex-wrap: nowrap; /* Force l'alignement sur une seule ligne */
+    justify-content: center;
+    gap: 15px; /* Espace réduit entre les cadres pour que les 7 tiennent */
+}
+
+.skill-box {
+    background: #FFFFFF;
+    border: 2px solid #F2F2F2;
+    /* Largeur ajustée pour faire tenir 7 boîtes sur 1200px */
+    width: 155px; 
+    height: 165px; 
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 10px 10px 0px #F9F9F9;
+    transition: all 0.3s ease;
+    flex-shrink: 0; /* Empêche les boîtes de rétrécir */
+}
+
+.skill-box img { 
+    width: 60px; /* Taille optimale pour rester visible et aligné */
+    height: 60px; 
+    object-fit: contain; 
+}
+
+.skill-box span { 
+    font-family: 'Space Mono', monospace; 
+    font-size: 0.8rem; 
+    font-weight: 800; 
+    color: var(--left-bg); 
+    text-transform: uppercase;
+}
+
+.skill-box:hover {
+    transform: translateY(-8px);
+    border-color: var(--left-bg);
+    box-shadow: 15px 15px 0px var(--right-bg);
+}
+
+/* --- SECTION PARCOURS --- */
+.experience-section {
+    background-color: #FFFFFF;
+    padding: 100px 60px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* --- NAVIGATION ONGLETS --- */
+.tab-navigation {
+    display: flex;
+    gap: 20px;
+    margin-top: 40px;
+    justify-content: center;
+}
+
+.tab-btn {
+    background: transparent;
+    border: 2px solid var(--left-bg);
+    padding: 12px 30px;
+    font-family: 'Space Mono', monospace;
+    font-weight: 800;
+    font-size: 0.8rem;
+    color: var(--left-bg);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tab-btn.active {
+    background: var(--right-bg); /* Rose quand actif */
+    border-color: var(--right-bg);
+    color: var(--left-bg);
+    box-shadow: 8px 8px 0px var(--left-bg);
+}
+
+/* --- GESTION AFFICHAGE --- */
+.tab-content { display: none; padding-top: 60px; animation: fadeIn 0.5s ease; }
+.tab-content.active { display: block; }
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+/* --- FRISE (TIMELINE) --- */
+.timeline {
+    max-width: 800px;
+    margin: 0 auto;
+    border-left: 4px solid var(--left-bg);
+    padding-left: 40px;
+    position: relative;
+}
+
+.timeline-item {
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -52px;
+    top: 5px;
+    width: 20px;
+    height: 20px;
+    background: var(--right-bg);
+    border: 4px solid var(--left-bg);
+}
+
+.time-marker { font-family: 'Space Mono', monospace; color: var(--right-bg); font-weight: 900; margin-bottom: 5px; }
+.time-content h3 { font-family: 'Montserrat'; font-weight: 900; font-size: 1.8rem; color: var(--left-bg); }
+.location { font-weight: 700; color: #666; font-size: 0.9rem; margin-bottom: 10px; }
+
+/* --- CARTES PRO --- */
+.pro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.pro-card {
+    background: #FFFFFF;
+    border: 2px solid var(--left-bg);
+    padding: 40px;
+    box-shadow: 15px 15px 0px var(--right-bg);
+    transition: all 0.3s ease;
+}
+
+.pro-card:hover { transform: translate(-5px, -5px); box-shadow: 20px 20px 0px var(--left-bg); }
+.pro-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; }
+.pro-logo { height: 40px; object-fit: contain; }
+.pro-date { font-family: 'Space Mono', monospace; font-size: 0.7rem; color: var(--right-bg); font-weight: 800; }
+.pro-entity { font-weight: 700; color: #888; margin-top: 5px; margin-bottom: 25px; }
+
+.pro-link {
+    display: inline-block;
+    color: var(--left-bg);
+    text-decoration: none;
+    font-weight: 900;
+    font-size: 0.8rem;
+    border-bottom: 2px solid var(--right-bg);
+    padding-bottom: 5px;
+}
+
+/* --- MOTIFS --- */
+.path-dots { top: 10%; left: 5%; width: 100px; height: 100px; background-image: radial-gradient(var(--left-bg) 2px, transparent 2px); background-size: 15px 15px; opacity: 0.2; }
+.path-square-outline { bottom: 10%; right: 5%; width: 150px; height: 150px; border: 1px solid var(--right-bg); transform: rotate(15deg); opacity: 0.2; }
+
+/* --- SECTION PROJETS --- */
+.projects-section {
+    background-color: #FFFFFF;
+    padding: 100px 60px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* --- FILTRES --- */
+.filter-navigation {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.filter-btn {
+    background: #f5f5f5;
+    border: none;
+    padding: 10px 25px;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.75rem;
+    font-weight: 800;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-btn.active {
+    background: var(--right-bg);
+    color: var(--left-bg);
+    box-shadow: 6px 6px 0px var(--left-bg);
+}
+
+/* --- GRID ET CARTES --- */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.project-card {
+    background: #FFFFFF;
+    border: 1px solid #eee;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    box-shadow: 10px 10px 0px rgba(0,0,0,0.02);
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 15px 15px 0px var(--right-bg);
+    border-color: var(--left-bg);
+}
+
+/* MÉDIA (IMAGE/VIDÉO) */
+.project-media {
+    height: 220px;
+    position: relative;
+    background: #000;
+}
+
+.project-video, .project-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* OVERLAY HOVER */
+.project-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(74, 58, 255, 0.8); /* Indigo transparent */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.project-card:hover .project-overlay { opacity: 1; }
+
+.action-icon {
+    width: 50px; height: 50px;
+    background: var(--right-bg);
+    border-radius: 50%;
+    display: flex; justify-content: center; align-items: center;
+    text-decoration: none; font-size: 1.2rem;
+    transition: transform 0.2s;
+}
+
+.action-icon:hover { transform: scale(1.1); }
+
+/* INFOS PROJET */
+.project-info { padding: 30px; }
+.project-info h3 { font-family: 'Montserrat'; font-weight: 900; margin-bottom: 10px; font-size: 1.4rem; }
+.proj-tag {
+    display: inline-block;
+    background: var(--right-bg);
+    color: var(--left-bg);
+    padding: 4px 10px;
+    font-size: 0.65rem;
+    font-weight: 900;
+    margin-bottom: 15px;
+}
+.project-info p { font-size: 0.9rem; color: #666; line-height: 1.6; }
+
+/* --- MOTIFS GÉOMÉTRIQUES --- */
+.geo-decor { position: absolute; pointer-events: none; opacity: 0.3; }
+.proj-dots-top-left { top: 5%; left: 0; width: 150px; height: 150px; background-image: radial-gradient(var(--left-bg) 2px, transparent 2px); background-size: 20px 20px; }
+.proj-grid-right { top: 20%; right: -50px; width: 200px; height: 300px; border-right: 5px solid var(--right-bg); border-left: 1px solid var(--left-bg); opacity: 0.1; }
+.proj-circle-center { bottom: 0; left: 50%; width: 400px; height: 400px; border: 1px solid var(--right-bg); border-radius: 50%; transform: translateX(-50%) translateY(50%); opacity: 0.05; }
+
+/* --- FIX FINAL AVATAR --- */
+
+/* On crée un cadre invisible pour centrer le tout */
+.avatar-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centre parfaitement dans decor-container */
+    width: 300px;
+    height: 300px;
+    z-index: 10;
+}
+
+/* On force ton losange bleu à rester en place dessous */
+.diamond-main {
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+    transform: rotate(45deg) !important; /* Le bleu tourne... */
+    margin: 0 !important;
+    z-index: 1;
+}
+
+/* On pose l'image de la fille au-dessus */
+.safia-img {
+    position: absolute;
+    z-index: 2; /* Devant le bleu */
+    width: 140%; /* Elle est un peu plus grande pour l'effet 3D */
+    height: auto;
+    left: 50%;
+    bottom: -10px; /* Elle dépasse un peu vers le bas */
+    transform: translateX(-50%); /* Elle ne tourne PAS, donc elle reste droite */
+    pointer-events: none;
+}
+
+/* --- SECTION 06 : E5 (VERSION FINALE BLANCHE) --- */
+.section-e5-clean {
+    position: relative;
+    padding: 120px 8%;
+    background-color: #FFFFFF; /* FOND BLANC COMME DEMANDÉ */
+    color: var(--left-bg); /* Indigo */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.e5-wrapper-final {
+    width: 100%;
+    max-width: 1000px;
+    z-index: 10;
+}
+
+/* TITRE STYLE SECTIONS PRÉCÉDENTES */
+.e5-title-block {
+    margin-bottom: 50px;
+}
+
+.e5-index {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 1.2rem;
+    color: var(--right-bg); /* Rose pour le numéro */
+    display: block;
+    margin-bottom: 5px;
+}
+
+.e5-title-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 4rem;
+    font-weight: 700;
+    color: var(--left-bg);
+    line-height: 1;
+}
+
+.bold-e5 { font-weight: 900; }
+
+/* LA CARTE DE CONTENU */
+.e5-card-white {
+    background: #fff;
+    padding: 50px;
+    border: 1px solid rgba(74, 58, 255, 0.1);
+    box-shadow: 20px 20px 0px var(--right-bg); /* Ombre rose solide comme ton Hero */
+}
+
+.e5-question {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.e5-accent-line {
+    width: 40px;
+    height: 4px;
+    background: var(--left-bg);
+    margin-bottom: 30px;
+}
+
+.e5-body-text p {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.8;
+    color: #444;
+    margin-bottom: 15px;
+}
+
+/* BOUTON CENTRÉ */
+.e5-action-center {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.btn-safia-download {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 28px;
+    background: var(--left-bg);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 4px; /* Plus carré/pro */
+    transition: 0.3s;
+}
+
+.btn-safia-download:hover {
+    background: var(--right-bg);
+    transform: translateY(-3px);
+}
+
+/* --- MOTIFS GÉOMÉTRIQUES INDIGO & ROSE --- */
+.m-geo { position: absolute; z-index: 1; opacity: 0.2; }
+
+.m-grid {
+    top: 5%; left: 5%; width: 200px; height: 200px;
+    background-image: radial-gradient(var(--left-bg) 2px, transparent 2px);
+    background-size: 20px 20px;
+}
+
+.m-circle-lg { width: 400px; height: 400px; border: 1px solid var(--left-bg); border-radius: 50%; top: -100px; right: -100px; }
+.m-circle-sm { width: 100px; height: 100px; border: 10px solid var(--right-bg); border-radius: 50%; bottom: 10%; left: 2%; opacity: 0.1; }
+
+.m-plus { font-weight: 900; font-size: 2rem; color: var(--left-bg); }
+.p1 { top: 20%; right: 10%; }
+.p2 { bottom: 20%; left: 15%; }
+
+.m-square-outline {
+    width: 150px; height: 150px; border: 2px solid var(--left-bg);
+    transform: rotate(15deg); bottom: -30px; right: 5%;
+}
+
+.m-line-deco {
+    width: 300px; height: 2px; background: var(--right-bg);
+    top: 40%; left: -50px; transform: rotate(-45deg);
+}
+
+
+
+/* --- SECTION VEILLE FINALE --- */
+.section-veille-finale {
+    position: relative;
+    padding: 100px 5%;
+    background-color: #FFFFFF;
+    color: var(--left-bg);
+    overflow: hidden;
+}
+
+/* --- MOTIFS GÉOMÉTRIQUES PARTOUT --- */
+.m-geo { position: absolute; z-index: 1; opacity: 0.15; pointer-events: none; }
+
+.m-grid-1 { top: 2%; left: 2%; width: 250px; height: 250px; background-image: radial-gradient(var(--left-bg) 2px, transparent 2px); background-size: 20px 20px; }
+.m-grid-2 { bottom: 5%; right: 2%; width: 200px; height: 200px; background-image: radial-gradient(var(--right-bg) 2px, transparent 2px); background-size: 15px 15px; }
+.m-circle-1 { top: 15%; right: -100px; width: 300px; height: 300px; border: 2px solid var(--left-bg); border-radius: 50%; }
+.m-plus { font-weight: 900; font-size: 2.5rem; color: var(--right-bg); }
+.p1 { top: 40%; left: 5%; }
+.p2 { top: 10%; right: 20%; }
+.p3 { bottom: 20%; left: 40%; }
+.m-line-1 { top: 50%; left: -50px; width: 400px; height: 2px; background: var(--left-bg); transform: rotate(-30deg); opacity: 0.05; }
+.m-line-2 { bottom: 10%; right: 10%; width: 300px; height: 1px; background: var(--right-bg); transform: rotate(15deg); }
+.m-square-1 { top: 70%; right: 15%; width: 80px; height: 80px; border: 2px solid var(--left-bg); transform: rotate(45deg); }
+
+/* CONTENU */
+.veille-content-wrapper { position: relative; z-index: 10; max-width: 1200px; margin: 0 auto; }
+
+.veille-intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.intro-text-box, .tools-text-box {
+    background: #fdfdfd;
+    padding: 30px;
+    border: 1px solid #f0f0f0;
+    box-shadow: 10px 10px 0px var(--right-bg); /* Ombre rose DA */
+}
+
+.intro-text-box h3, .tools-text-box h3 { margin-bottom: 15px; font-size: 1.3rem; font-weight: 800; }
+
+/* BANNIÈRE PROBLÉMATIQUE */
+.veille-subject-banner {
+    background: var(--left-bg);
+    color: #fff;
+    padding: 40px;
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.subject-tag { color: var(--right-bg); font-weight: 900; letter-spacing: 3px; font-size: 0.8rem; }
+.subject-title { font-size: 2rem; margin-top: 15px; line-height: 1.3; font-weight: 700; }
+
+/* AXES ET CARTES */
+.axe-header {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    padding-left: 15px;
+    border-left: 6px solid var(--right-bg);
+    font-weight: 800;
+}
+
+.veille-flex-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 80px;
+}
+
+.v-card {
+    background: #fff;
+    border: 1px solid #eee;
+    transition: 0.4s;
+}
+
+.v-card:hover { transform: translateY(-10px); border-color: var(--right-bg); }
+
+.v-img { height: 200px; overflow: hidden; }
+.v-img img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+.v-card:hover .v-img img { scale: 1.1; }
+
+.v-body { padding: 25px; }
+.v-body h5 { font-size: 1.2rem; margin-bottom: 12px; font-weight: 800; }
+.v-body p { font-size: 0.95rem; color: #555; line-height: 1.6; margin-bottom: 20px; }
+
+.v-link {
+    font-weight: 800;
+    color: var(--left-bg);
+    text-decoration: none;
+    border-bottom: 2px solid var(--right-bg);
+    padding-bottom: 2px;
+}
+
+.v-link:hover { color: var(--right-bg); }
+
+/* --- SECTION CONTACT & FOOTER --- */
+.section-contact {
+    position: relative;
+    padding: 100px 5% 40px 5%;
+    background-color: #fcfcfc;
+    overflow: hidden;
+}
+
+.contact-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 50px;
+    margin-top: 40px;
+}
+
+/* FORMULAIRE */
+.contact-form-box {
+    background: #fff;
+    padding: 40px;
+    border: 1px solid #eee;
+    box-shadow: 20px 20px 0px var(--left-bg); /* Ton ombre Indigo */
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 900;
+    margin-bottom: 8px;
+    color: var(--right-bg);
+    letter-spacing: 1px;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #f0f0f0;
+    background: #fafafa;
+    font-family: 'Inter', sans-serif;
+    transition: 0.3s;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    border-color: var(--left-bg);
+    background: #fff;
+    outline: none;
+}
+
+.btn-send {
+    background: var(--left-bg);
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    font-weight: 900;
+    cursor: pointer;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-send:hover {
+    background: var(--right-bg);
+    transform: translateX(5px);
+}
+
+/* CARTE INFO ET RÉSEAUX */
+.info-card {
+    background: var(--left-bg);
+    color: #fff;
+    padding: 40px;
+    margin-bottom: 30px;
+}
+
+.social-links {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.social-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    padding: 10px;
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: 0.3s;
+}
+
+.social-item img {
+    width: 20px;
+    filter: invert(1);
+}
+
+.social-item:hover {
+    background: rgba(255,255,255,0.1);
+    border-color: var(--right-bg);
+}
+
+/* STATUS PING */
+.status-card {
+    background: #f0f0f0;
+    padding: 20px;
+    border-radius: 4px;
+}
+
+.ping-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.ping-dot {
+    width: 10px;
+    height: 10px;
+    background: #2ecc71;
+    border-radius: 50%;
+    animation: pulse-green 2s infinite;
+}
+
+@keyframes pulse-green {
+    0% { box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(46, 204, 113, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(46, 204, 113, 0); }
+}
+
+.footer-bottom {
+    margin-top: 80px;
+    padding-top: 30px;
+    border-top: 1px solid #eee;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #888;
+}
+
+/* MOTIFS DÉCO FOOTER */
+.m-grid-footer { bottom: 5%; left: 2%; width: 150px; height: 150px; background-image: radial-gradient(var(--left-bg) 2px, transparent 2px); background-size: 15px 15px; }
+.m-circle-footer { top: -50px; right: -50px; width: 200px; height: 200px; border: 20px solid var(--right-bg); border-radius: 50%; opacity: 0.05; }
+
+/* --- PAGE EXPERTISE (STYLISÉE) --- */
+.page-stage-expert {
+    background-color: #ffffff;
+    color: var(--left-bg);
+}
+
+.stage-expert-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 5%;
+    position: relative;
+    z-index: 10;
+}
+
+/* --- MOTIFS EN SURCHARGE --- */
+.m-geo { position: absolute; z-index: 1; opacity: 0.15; pointer-events: none; }
+.m-grid-bg { top: 0; left: 0; width: 100%; height: 600px; background-image: radial-gradient(var(--left-bg) 1px, transparent 1px); background-size: 30px 30px; opacity: 0.05; }
+.m-circle-outline-1 { top: 10%; right: -150px; width: 400px; height: 400px; border: 1px solid var(--left-bg); border-radius: 50%; }
+.m-plus { font-weight: 900; font-size: 2rem; color: var(--right-bg); }
+.p1 { top: 15%; left: 5%; }
+.p2 { top: 45%; right: 10%; }
+.p3 { bottom: 20%; left: 8%; }
+.m-dots-cluster { top: 30%; left: 20%; width: 100px; height: 100px; background: radial-gradient(var(--right-bg) 2px, transparent 2px); background-size: 15px 15px; }
+
+/* --- SECTIONS --- */
+.expert-section {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    margin-bottom: 120px;
+}
+.expert-section.reverse { flex-direction: row-reverse; }
+
+.expert-text { flex: 1.2; }
+.expert-visual { flex: 1; }
+
+.section-title-box {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.section-num {
+    font-family: 'Montserrat';
+    font-weight: 900;
+    color: var(--right-bg);
+    font-size: 1.5rem;
+    border-bottom: 4px solid var(--left-bg);
+}
+
+/* BLOCS DE DÉFINITION TECHNIQUE */
+.tech-definition {
+    margin-top: 25px;
+    padding: 20px;
+    background: #f8f8ff;
+    border-left: 4px solid var(--left-bg);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.img-label {
+    font-size: 0.8rem;
+    color: #888;
+    margin-top: 15px;
+    text-align: center;
+    font-family: 'Fira Code', monospace;
+}
+
+/* BOUTON LIVE */
+.btn-live {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 15px 30px;
+    background: var(--right-bg);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 900;
+    box-shadow: 10px 10px 0px var(--left-bg);
+    transition: 0.3s;
+}
+.btn-live:hover { transform: translate(-5px, -5px); box-shadow: 15px 15px 0px var(--left-bg); }
+
+/* FOOTER CARD */
+.footer-card {
+    background: var(--left-bg);
+    color: #fff;
+    padding: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 20px 20px 0px var(--right-bg);
+}
+
+/* --- CONFIGURATION GÉNÉRALE --- */
+:root {
+    --mint: #2ed573; /* Nouvelle couleur pour la variété */
+}
+
+.body-near-creative {
+    background: #ffffff;
+    overflow-x: hidden;
+}
+
+/* --- MOTIFS GÉOMÉTRIQUES (L'INVASION) --- */
+.m-geo { position: absolute; pointer-events: none; z-index: 1; }
+.m-grid-bg { top: 0; left: 0; width: 100%; height: 1000px; background-image: radial-gradient(var(--left-bg) 1px, transparent 1px); background-size: 40px 40px; opacity: 0.05; }
+.m-dots-color { width: 150px; height: 150px; background-image: radial-gradient(var(--right-bg) 3px, transparent 3px); background-size: 15px 15px; opacity: 0.2; }
+.d1 { top: 10%; right: 5%; }
+.d2 { bottom: 20%; left: 5%; }
+.m-plus-big { font-size: 5rem; font-weight: 900; color: var(--mint); opacity: 0.1; }
+.p1 { top: 5%; left: 2%; }
+.p2 { top: 50%; right: 2%; }
+
+/* --- LAYOUT --- */
+.creative-wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 100px 20px;
+}
+
+.header-main { margin-bottom: 80px; text-align: left; }
+.txt-gradient { color: var(--left-bg); border-bottom: 8px solid var(--right-bg); }
+
+/* --- BENTO BOXES (Zéro chevauchement) --- */
+.bento-box {
+    display: flex;
+    align-items: stretch;
+    background: #fff;
+    margin-bottom: 60px;
+    border: 1px solid #eee;
+    min-height: 350px;
+    box-shadow: 20px 20px 0px #f0f0f0;
+}
+
+.bento-box.reverse { flex-direction: row-reverse; }
+
+.bento-text {
+    flex: 1.2;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.bento-visual {
+    flex: 1;
+    background: #fafafa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-left: 1px solid #eee;
+}
+
+.bento-box.reverse .bento-visual { border-left: none; border-right: 1px solid #eee; }
+
+/* VARIANTES DE COULEURS */
+.bento-indigo { box-shadow: 20px 20px 0px var(--left-bg); }
+.bento-mint { box-shadow: 20px 20px 0px var(--mint); }
+.bento-rose { box-shadow: 20px 20px 0px var(--right-bg); }
+.bento-dark { background: var(--left-bg); color: #fff; box-shadow: 20px 20px 0px var(--right-bg); }
+.bento-dark .bento-num { background: var(--right-bg); }
+
+.bento-num {
+    background: var(--left-bg);
+    color: #fff;
+    padding: 5px 15px;
+    font-weight: 900;
+    margin-right: 15px;
+}
+
+/* ÉLÉMENTS GRAPHIQUES */
+.img-styled {
+    width: 100%;
+    height: auto;
+    box-shadow: 10px 10px 30px rgba(0,0,0,0.1);
+}
+
+.terminal-mockup {
+    background: #1a1a1a;
+    width: 100%;
+    padding: 20px;
+    border-radius: 8px;
+    font-family: 'Fira Code', monospace;
+    color: var(--mint);
+}
+
+.btn-action {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 15px 30px;
+    background: var(--right-bg);
+    color: #fff;
+    font-weight: 900;
+    text-decoration: none;
+}
+
+.download-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 30px;
+    background: var(--left-bg);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 900;
+    margin-top: 30px;
+    transition: 0.3s;
+}
+
+.download-card:hover { transform: scale(1.02); }
+
+/* --- CONFIGURATION RENAULT --- */
+:root {
+    --renault-blue: #0082c3; /* Bleu électrique pour la Tech */
+}
+
+/* --- MOTIFS GÉOMÉTRIQUES (RENAULT VERSION) --- */
+.m-dots-blue { width: 120px; height: 120px; background-image: radial-gradient(var(--renault-blue) 3px, transparent 3px); background-size: 15px 15px; opacity: 0.2; top: 15%; left: 5%; }
+.m-dots-rose { width: 120px; height: 120px; background-image: radial-gradient(var(--right-bg) 3px, transparent 3px); background-size: 15px 15px; opacity: 0.2; bottom: 10%; right: 5%; }
+.m-circle-outline { position: absolute; top: -100px; left: -100px; width: 400px; height: 400px; border: 2px solid var(--renault-blue); border-radius: 50%; opacity: 0.05; }
+
+/* --- STYLING SPÉCIFIQUE --- */
+.txt-gradient-blue { color: var(--left-bg); border-bottom: 8px solid var(--renault-blue); }
+
+.bento-blue { box-shadow: 20px 20px 0px var(--renault-blue); }
+
+/* TERMINAL MOCKUP (Style sombre pour Aeris) */
+.terminal-mockup {
+    background: #111;
+    width: 90%;
+    padding: 25px;
+    border-radius: 4px;
+    font-family: 'Fira Code', monospace;
+    color: var(--renault-blue);
+    border-left: 4px solid var(--renault-blue);
+}
+
+.t-head { display: flex; gap: 6px; margin-bottom: 15px; }
+.t-head span { width: 10px; height: 10px; border-radius: 50%; background: #333; }
+
+.img-caption {
+    font-size: 0.75rem;
+    color: #666;
+    margin-top: 10px;
+    text-align: center;
+    font-style: italic;
+    font-family: 'Inter', sans-serif;
+}

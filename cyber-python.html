@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber-Aegis - Fiche Projet</title>
+    <style>
+        :root {
+            --orange-bg: #FFA500;
+            --noir: #1A1A1A;
+            --blanc: #FFFFFF;
+            --vert-flash: #32FF32;
+            --bleu-royal: #0066CC;
+            --rouge: #DC143C;
+        }
+
+        body {
+            background-color: var(--orange-bg);
+            /* Le motif à points noirs du fond */
+            background-image: radial-gradient(var(--noir) 2px, transparent 2px);
+            background-size: 20px 20px;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            padding: 40px 20px;
+            margin: 0;
+        }
+
+        /* La grande feuille blanche */
+        .page {
+            background-color: var(--blanc);
+            width: 100%;
+            max-width: 900px;
+            border: 6px solid var(--noir);
+            padding: 60px;
+            position: relative;
+            box-shadow: 20px 20px 0px rgba(0,0,0,0.2);
+        }
+
+        /* Le petit carré vert en haut à droite */
+        .corner-deco {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            width: 40px;
+            height: 40px;
+            background: var(--vert-flash);
+            border: 4px solid var(--noir);
+        }
+
+        header {
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 20px;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: -2px;
+            border-bottom: 8px solid var(--vert-flash);
+            display: inline-block;
+        }
+
+        .subtitle-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 15px;
+        }
+
+        .badge-team {
+            background: var(--noir);
+            color: var(--blanc);
+            padding: 8px 15px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .badge-team::before {
+            content: "🎮";
+        }
+
+        /* Section 1 : Texte Seul (Image supprimée comme demandé) */
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 1.8rem;
+            margin: 40px 0 20px 0;
+        }
+
+        .section-num { font-weight: 900; }
+
+        .content-text {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #333;
+            max-width: 100%; /* Le texte prend toute la largeur */
+        }
+
+        /* Section 2 : Les 4 Blocs de Conception */
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .process-card {
+            border: 2px solid var(--noir);
+            padding: 15px;
+            background: var(--blanc);
+            box-shadow: 4px 4px 0px var(--noir);
+            font-size: 0.85rem;
+            min-height: 150px;
+        }
+
+        .process-card h4 {
+            margin: 0 0 10px 0;
+            font-size: 0.9rem;
+            display: block;
+        }
+
+        .card-1 h4 { color: var(--rouge); }
+        .card-2 h4 { color: var(--bleu-royal); }
+        .card-3 h4 { color: #E67E22; }
+        .card-4 h4 { color: #E67E22; }
+
+        .blue-accent {
+            width: 8px;
+            background: var(--bleu-royal);
+            margin-right: 15px;
+        }
+
+        /* Section 4 : Rendu Visuel (Grille 2 colonnes) */
+        .game-display {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .media-container {
+            border: 4px solid var(--bleu-royal);
+            background: var(--noir);
+            position: relative;
+            padding: 10px;
+        }
+
+        .media-container img {
+            width: 100%;
+            display: block;
+        }
+
+        .media-label {
+            background: var(--blanc);
+            padding: 10px;
+            border-top: 2px solid var(--noir);
+            font-size: 0.8rem;
+            font-family: monospace;
+        }
+
+        /* Boutons du bas */
+        .footer-btns {
+            margin-top: 60px;
+            display: flex;
+            gap: 20px;
+        }
+
+        .btn {
+            padding: 12px 25px;
+            border: 2px solid var(--noir);
+            font-weight: bold;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        .btn-blue { background: var(--bleu-royal); color: white; }
+        .btn-outline { background: white; color: var(--noir); }
+
+    </style>
+</head>
+<body>
+
+<div class="page">
+    <a href="safia-hero.html" style="display: inline-block; padding: 10px 20px; background-color: #f1e05a; color: #333; text-decoration: none; border-radius: 5px; font-weight: bold; margin-top: 20px;">← Retour au Portfolio</a><br>
+    <div class="corner-deco"></div>
+
+    <header>
+        <h1>Cyber-Aegis</h1>
+        <div class="subtitle-row">
+            <span>Un shooter d'arcade moderne en Python.</span>
+            <div class="badge-team">Projet collaboratif (équipe de 3)</div>
+        </div>
+    </header>
+
+    <div class="section-title">
+        <span class="section-num">1</span>
+        <span>L'Aventure Collective</span>
+    </div>
+    <div class="content-text">
+        Ce projet est né de notre passion commune pour le rétrogaming et le développement. Nous avons décidé de concevoir un jeu Python via la bibliothèque Pygame. Ce fut une aventure technique intense où il a fallu gérer la fluidité (FPS), les interactions physiques et l'esprit d'équipe pour coordonner le code.
+    </div>
+
+    <div class="section-title" style="display: flex;">
+        <div class="blue-accent"></div>
+        <span class="section-num">2</span>
+        <span>Processus de Conception</span>
+    </div>
+
+    <div class="process-grid">
+        <div class="process-card card-1">
+            <h4>01. Idéation & Brainstorming</h4>
+            Définition du gameplay : mouvement du vaisseau, types d'ennemis et système de scoring dynamique.
+        </div>
+        <div class="process-card card-2">
+            <h4>02. Architecture & POO</h4>
+            Structuration des classes Python (Player, Enemy, Laser) pour un code propre et évolutif.
+        </div>
+        <div class="process-card card-3">
+            <h4>03. Implémentation de la logique</h4>
+            Gestion des boucles de jeu, des vecteurs de déplacement et des collisions en temps réel.
+        </div>
+        <div class="process-card card-4">
+            <h4>04. Optimisation</h4>
+            Tests de collision avancés, gestion de la mémoire et maintien d'un framerate constant à 60 FPS.
+        </div>
+    </div>
+
+    <div class="section-title">
+        <span class="section-num">4</span>
+        <span>Rendu Visuel & Gameplay</span>
+    </div>
+
+    <div class="game-display">
+        <div class="media-container">
+            <img src="../Portfolio/images/collision-detec.png" alt="Schéma technique">
+            <div class="media-label">Schema de detection de collision </div>
+        </div>
+        <div class="media-container" style="border-color: #0088ff;">
+    <video autoplay loop muted playsinline style="width: 100%; display: block;">
+        <source src="images/jeu.mp4" type="video/mp4">
+        Ton navigateur ne supporte pas la lecture de vidéos.
+    </video>
+    <div class="media-label">Cyber-Aegis.py : demo_gameplay.mp4</div>
+</div>
+    </div>
+
+    <div class="footer-btns">
+        <a href="https://github.com/SAFyess/Cyber-Aegis-Python" class="btn btn-outline">Voir le code GitHub</a>
+    </div>
+
+    <p style="text-align: center; color: #999; font-size: 0.7rem; margin-top: 40px;">
+        Toutes les étapes de développement sont documentées sur le dépôt distant.
+    </p>
+</div>
+
+</body>
+</html>

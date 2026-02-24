@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Configuration en cours...</title>
+    <style>
+        body {
+            background-color: #fdf2f2; /* Ton rose pâle */
+            font-family: 'Segoe UI', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            /* Motifs géométriques en fond */
+            background-image: radial-gradient(#4d4dff 0.5px, transparent 0.5px);
+            background-size: 20px 20px;
+        }
+
+        .loader-container {
+            text-align: center;
+            background: white;
+            padding: 50px;
+            border: 3px solid #4d4dff;
+            box-shadow: 10px 10px 0px #ff85a2;
+        }
+
+        h1 { color: #4d4dff; font-size: 1.5rem; margin-bottom: 20px; }
+
+        /* La barre de chargement */
+        .progress-bar {
+            width: 300px;
+            height: 20px;
+            background: #eee;
+            border: 2px solid #4d4dff;
+            position: relative;
+            margin: 20px auto;
+        }
+
+        .progress-fill {
+            width: 0%;
+            height: 100%;
+            background: #ff85a2;
+            animation: fillBar 3s infinite ease-in-out;
+        }
+
+        @keyframes fillBar {
+            0% { width: 0%; }
+            50% { width: 70%; }
+            100% { width: 100%; }
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #4d4dff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+<div class="loader-container">
+    <h1>⚙️ CONFIGURATION EN COURS</h1>
+    <p>Le module est en cours de déploiement sur le serveur...</p>
+    
+    <div class="progress-bar">
+        <div class="progress-fill"></div>
+    </div>
+
+    <p style="font-style: italic; font-size: 0.8rem; color: #666;">
+        C'est un peu long ? Normal, on peaufine les détails !
+    </p>
+    
+    <a href="safia-hero.html" class="back-link">⬅ RETOUR À L'ACCUEIL</a>
+</div>
+
+</body>
+</html>

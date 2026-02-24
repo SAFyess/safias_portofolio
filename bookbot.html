@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Détails Projet - BookBot</title>
+    <style>
+        :root {
+            --bg-color: #fdf2f2; /* Rose très pâle comme ton site */
+            --main-blue: #4d4dff;
+            --accent-pink: #ff85a2;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: var(--bg-color);
+            /* MOTIFS GÉOMÉTRIQUES EN FOND */
+            background-image: 
+                linear-gradient(30deg, #ff85a211 12%, transparent 12.5%, transparent 87%, #ff85a211 87.5%, #ff85a211),
+                linear-gradient(150deg, #ff85a211 12%, transparent 12.5%, transparent 87%, #ff85a211 87.5%, #ff85a211),
+                linear-gradient(30deg, #ff85a211 12%, transparent 12.5%, transparent 87%, #ff85a211 87.5%, #ff85a211),
+                linear-gradient(150deg, #ff85a211 12%, transparent 12.5%, transparent 87%, #ff85a211 87.5%, #ff85a211),
+                linear-gradient(60deg, #4d4dff11 25%, transparent 25.5%, transparent 75%, #4d4dff11 75%, #4d4dff11),
+                linear-gradient(60deg, #4d4dff11 25%, transparent 25.5%, transparent 75%, #4d4dff11 75%, #4d4dff11);
+            background-size: 80px 140px;
+            padding: 40px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: white;
+            padding: 40px;
+            border: 4px solid var(--main-blue);
+            box-shadow: 15px 15px 0px var(--accent-pink);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* DÉCORATION GÉOMÉTRIQUE DANS LES COINS */
+        .container::before {
+            content: "";
+            position: absolute;
+            top: -20px; right: -20px;
+            width: 100px; height: 100px;
+            background: repeating-linear-gradient(45deg, var(--main-blue), var(--main-blue) 2px, transparent 2px, transparent 10px);
+        }
+
+        h1 { color: var(--main-blue); font-size: 2.5em; text-transform: uppercase; }
+        .tag { background: var(--accent-pink); color: white; padding: 5px 15px; font-weight: bold; border-radius: 50px; }
+        
+        .section { margin-top: 30px; border-left: 5px solid var(--main-blue); padding-left: 20px; }
+        
+        img { width: 100%; border: 2px solid #ccc; margin: 20px 0; }
+        
+        .geometric-box {
+            background: #f0f0ff;
+            border: 2px dashed var(--main-blue);
+            padding: 20px;
+            margin: 20px 0;
+            clip-path: polygon(0% 0%, 100% 0%, 95% 100%, 5% 100%); /* Forme trapèze */
+        }
+    </style>
+</head>
+<body>
+<a href="safia-hero.html" class="back-home"> ← RETOUR</a>
+<div class="container">
+    <span class="tag">STAGE BARCELONE 2025</span>
+    <h1>BookBot : Intelligence Artificielle</h1>
+
+    <div class="section">
+        <h2>Le Concept</h2>
+        <p>Développé au sein de <strong>Near Foundation</strong>, le BookBot est un agent intelligent conçu pour révolutionner la recommandation littéraire. Contrairement à un algorithme classique, il utilise le <strong>Natural Language Processing (NLP)</strong> pour comprendre les émotions et les préférences subtiles des lecteurs.</p>
+    </div>
+
+    <div class="geometric-box">
+        <h3>Technologies Utilisées</h3>
+        <ul>
+            <li>LangChain pour l'orchestration des agents</li>
+            <li>Architecture Near pour la décentralisation</li>
+            <li>Python pour le backend et l'analyse de données</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Méthodologie & Réalisation</h2>
+        <p>Ma mission a consisté à créer une architecture capable de traiter des requêtes complexes comme "Je cherche un livre qui ressemble à l'ambiance de Inception mais dans un univers médiéval".</p>
+        
+        <img src="../Portfolio/images/3.png" alt="Architecture technique du BookBot">
+        <p style="font-style: italic; text-align: center;">// Schéma de flux de l'agent conversationnel</p>
+
+        <p>J'ai structuré l'agent en trois étapes : 
+            1. Analyse de l'intention (Intent Recognition)
+            2. Recherche sémantique dans la base de données
+            3. Génération de la recommandation personnalisée.
+        </p>
+    </div>
+
+    <div class="section">
+        <h2>Résultats</h2>
+        <p>Le BookBot a permis d'augmenter la précision des recommandations de 40% par rapport aux systèmes existants lors des phases de tests internes. Ce projet a démontré ma capacité à concevoir des solutions IA complexes et évolutives.</p>
+    </div>
+</div>
+
+<div style="text-align: center; margin-top: 50px; padding: 20px; border-top: 2px dashed #4d4dff;">
+    <p style="font-weight: bold; color: #333;">Envie d'aller plus loin ? analyse approfondie de l'architecture et du code du BookBot</p>
+    <a href="../rapport_near.foundation.pdf" download style="
+        display: inline-block;
+        padding: 15px 30px;
+        background-color: #4d4dff;
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 5px;
+        box-shadow: 5px 5px 0px #ff85a2;
+        transition: 0.3s;
+    ">
+        📥 Consulter le rapport (Pages 15-17)
+    </a>
+</div>
+
+</body>
+</html>
