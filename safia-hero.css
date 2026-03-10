@@ -1386,4 +1386,10 @@ h4 { font-family: 'Montserrat'; font-weight: 900; font-size: 3rem; margin-bottom
     text-align: center;
     font-style: italic;
     font-family: 'Inter', sans-serif;
+
+}
+
+p {
+    font-size: 1.1rem; /* Augmentation légère et propre */
+    line-height: 1.6;   /* Pour que les lignes ne soient pas trop serrées */
 }
