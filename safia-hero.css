@@ -1393,3 +1393,11 @@ p {
     font-size: 1.1rem; /* Augmentation légère et propre */
     line-height: 1.6;   /* Pour que les lignes ne soient pas trop serrées */
 }
+/* --- INTERVENTION CHIRURGICALE : LOGOS ET OUTILS --- */
+
+.skill-box span {
+    font-size: 1.1rem !important; /* Augmentation de la taille (était à 0.8rem) */
+    letter-spacing: 1.5px !important; /* Un peu plus d'espace entre les lettres pour la clarté */
+    font-weight: 900 !important; /* On renforce l'épaisseur pour que ce soit bien lisible */
+}
+
