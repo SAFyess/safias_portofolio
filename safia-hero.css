@@ -1401,3 +1401,66 @@ p {
     font-weight: 900 !important; /* On renforce l'épaisseur pour que ce soit bien lisible */
 }
 
+/* --- ALIGNEMENT ET TAILLE DES FLÈCHES DE VEILLE --- */
+
+/* 1. On force l'alignement sur une seule ligne */
+details summary h3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; /* Prend toute la largeur de l'encadré */
+    margin: 0;
+    font-size: 1.15rem; 
+    color: var(--left-bg);
+}
+
+/* 2. STYLE DE LA FLÈCHE (Plus petite et alignée à côté) */
+.arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* TAILLE RÉDUITE (Chirurgical) */
+    width: 32px;  /* On descend de 40px à 32px */
+    height: 32px;
+    border-radius: 50%;
+    
+    /* COULEURS */
+    background-color: var(--left-bg);
+    color: #FFFFFF;
+    
+    /* TYPO FLÈCHE */
+    font-size: 0.9rem; /* Plus fine */
+    
+    /* TRANSITION ET OMBRE */
+    transition: all 0.3s ease;
+    flex-shrink: 0; /* Empêche la flèche de s'écraser */
+    margin-left: 15px; /* Espace entre le texte et la flèche */
+}
+
+/* 3. EFFETS INTERACTIFS */
+details summary {
+    list-style: none;
+    cursor: pointer;
+    outline: none;
+    padding: 12px 15px;
+    border-radius: 8px;
+    transition: background 0.3s;
+}
+
+details summary::-webkit-details-marker {
+    display: none;
+}
+
+details summary:hover {
+    background-color: rgba(250, 218, 221, 0.4);
+}
+
+/* 4. ROTATION ET CHANGEMENT AU CLIC */
+details[open] .arrow {
+    transform: rotate(180deg);
+    background-color: var(--right-bg); /* Devient rose à l'ouverture */
+    color: var(--left-bg);
+}
+
+
